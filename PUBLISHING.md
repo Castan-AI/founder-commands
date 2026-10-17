@@ -42,21 +42,11 @@ The first four are how people browse for this kind of thing. The middle three ar
 - Description and website set. Point the website field at castan.ai.
 - Social preview image: skip it for now rather than shipping a bad one.
 
-## Pushing it as its own root
+## Pushing it
 
-The pack lives inside the main monorepo, so copy it out before publishing. That keeps the two histories separate and avoids a nested repository inside the working tree.
+This repository is its own root since 2026-10-17: it was split out of the product repository with its history, and the product repository no longer holds a copy. Edit here, commit here. When the product's tool names, tabs or links change, the person who changes them updates the matching lines here (the skills name the eight tools and the Settings tab).
 
-```bash
-cp -R ~/playground/castan/pack ~/playground/founder-commands
-cd ~/playground/founder-commands
-rm PUBLISHING.md
-git init
-git add .
-git commit -m "Founder commands for Claude Code"
-git branch -M main
-```
-
-Then create the public repository and push, with the GitHub CLI:
+Create the public repository and push, with the GitHub CLI, from this folder:
 
 ```bash
 gh repo create castan-ai/founder-commands \
